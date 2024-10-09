@@ -6,7 +6,7 @@ import { getFormattedDate, names, names1, names2 } from "../lib/utils"
   
 export default function Form() {
 
-    const [placeholder, setPlaceholder] = useState({
+    const [placeholder] = useState({
         author: 'Kyrylo Budanov',
         creationDate: getFormattedDate()
     })
@@ -77,7 +77,7 @@ export default function Form() {
                         Should get acquainted
                         </label>
                         <div id="acquainted-should" className="flex flex-row space-x-2"> 
-                            {names.map(name=><span className="px-2 py-1 bg-orange-800 text-white rounded-md">{name}</span>)}
+                            {names.map(name=><span key={name} className="px-2 py-1 bg-orange-800 text-white rounded-md">{name}</span>)}
                         </div>
                     </div>
                     <div className="mb-5 p-2 rounded-md border-gray-400 border-2">
@@ -85,7 +85,7 @@ export default function Form() {
                         Acquainted
                         </label>
                         <div id="acquainted-active" className="flex flex-row space-x-2"> 
-                            {names1.map(name=><span className="px-2 py-1 bg-green-800 text-white rounded-md">{name}</span>)}
+                            {names1.map(name=><span key={name} className="px-2 py-1 bg-green-800 text-white rounded-md">{name}</span>)}
                         </div>
                     </div>
                     <div className="mb-5 p-2 rounded-md border-gray-400 border-2">
@@ -93,7 +93,7 @@ export default function Form() {
                         Acquainted with decline
                         </label>
                         <div id="acquainted-declined" className="flex flex-row space-x-2"> 
-                            {names2.map(name=><span className="px-2 py-1 bg-red-800 text-white rounded-md">{name}</span>)}
+                            {names2.map(name=><span key={name} className="px-2 py-1 bg-red-800 text-white rounded-md">{name}</span>)}
                         </div>
                     </div>
                     <div className="mb-5">

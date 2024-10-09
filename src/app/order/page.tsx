@@ -52,15 +52,15 @@ export default function Page() {
         </div>
         <div>
           <h2 className="font-extrabold text-xl text-gray-300">Should get acquainted</h2>
-          <p className="font-mono text-gray-400 flex flex-row space-x-2">{order.acquaintedShould.map(name=><span className="px-2 py-1 bg-orange-900 text-white font-semibold rounded-md">{name}</span>)}</p>
+          <p className="font-mono text-gray-400 flex flex-row space-x-2">{order.acquaintedShould.map(name=><span key={name} className="px-2 py-1 bg-orange-900 text-white font-semibold rounded-md">{name}</span>)}</p>
         </div>
         <div>
           <h2 className="font-extrabold text-xl text-gray-300">Acquainted</h2>
-          <p className="font-mono text-gray-400 flex flex-row space-x-2">{order.acquaintedActive.map(name=><span className="px-2 py-1 bg-green-900 text-white font-semibold rounded-md">{name}</span>)}</p>
+          <p className="font-mono text-gray-400 flex flex-row space-x-2">{order.acquaintedActive.map(name=><span key={name} className="px-2 py-1 bg-green-900 text-white font-semibold rounded-md">{name}</span>)}</p>
         </div>
         <div>
           <h2 className="font-extrabold text-xl text-gray-300">Acquainted with decline</h2>
-          <p className="font-mono text-gray-400 flex flex-row space-x-2">{order.acquaintedDeclined.map(name=><span className="px-2 py-1 bg-red-900 text-white font-semibold rounded-md">{name}</span>)}</p>
+          <p className="font-mono text-gray-400 flex flex-row space-x-2">{order.acquaintedDeclined.map(name=><span key={name} className="px-2 py-1 bg-red-900 text-white font-semibold rounded-md">{name}</span>)}</p>
         </div>
         <div>
           <h2 className="font-extrabold text-xl text-gray-300">Status</h2>
