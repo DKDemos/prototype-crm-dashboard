@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { getFormattedDate } from '@/app/lib/utils';
 import { UserType } from '@/app/lib/types';
 import InputText from './FormElements/InputText';
@@ -39,7 +39,7 @@ export default function Form() {
   const [placeholder, setPlaceholder] = useState<PlaceholderType>({
     author: 'Kyrylo Budanov',
     creationDate: getFormattedDate(),
-    users: [],
+    users: users,
     shouldAcquainted: [],
     activeAcquainted: [],
     declinedAcquainted: [],
@@ -79,16 +79,6 @@ export default function Form() {
     console.log(placeholder.users);
     setPlaceholder({ ...placeholder, users: placeholder.users });
   };
-
-  useEffect(() => {
-    // const getUsers = async () => {
-    //   const users = await fetchUsers();
-    //   setPlaceholder({ ...placeholder, users: users });
-    // };
-    // getUsers();
-
-    setPlaceholder({ ...placeholder, users: users });
-  }, [placeholder]);
 
   return (
     <div className='flex items-center justify-center'>

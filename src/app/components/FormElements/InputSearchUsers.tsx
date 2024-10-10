@@ -1,7 +1,7 @@
 'use client';
 
 import { UserType } from '@/app/lib/types';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import WorkerButton from '../ui/WorkerButton';
 
 type InputSearchType = {
@@ -35,17 +35,17 @@ export default function InputSearch({
   addAcquainted,
 }: InputSearchType) {
   const [search, setSearch] = useState<string>('');
-  const [workers, setWorkers] = useState<UserType[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [workers, setWorkers] = useState<UserType[]>(users || []);
+  // const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      setWorkers(users || []);
-      setLoading(false);
-    };
-    fetchData();
-  }, [users]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setLoading(true);
+  //     setWorkers(users || []);
+  //     setLoading(false);
+  //   };
+  //   fetchData();
+  // }, [users]);
 
   const handleWorker = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -70,27 +70,23 @@ export default function InputSearch({
         name={id}
         id={id}
         placeholder={placeholder}
-        className='relative mb-3 w-full rounded-md border border-[#e0e0e0] bg-white px-6 py-3 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+        className='mb-3 w-full rounded-md border border-[#e0e0e0] bg-white px-6 py-3 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
         disabled={disabled}
         onChange={handleWorker}
         value={search}
       />
       <div className='flex max-h-40 w-full flex-row flex-wrap gap-4 overflow-y-scroll rounded-md p-2 font-semibold text-white'>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          workers.map((person: UserType) => (
-            <WorkerButton
-              key={person.id}
-              id={person.id}
-              color={'bg-gray-300 text-gray-900'}
-              title={`${person.firstname} ${person.lastname}`}
-              onClick={addAcquainted}
-              icon={addIcon}
-              actionColor='bg-green-800 hover:bg-green-700 ring-green-700'
-            />
-          ))
-        )}
+        {workers.map((person: UserType) => (
+          <WorkerButton
+            key={person.id}
+            id={person.id}
+            color={'bg-gray-300 text-gray-900'}
+            title={`${person.firstname} ${person.lastname}`}
+            onClick={addAcquainted}
+            icon={addIcon}
+            actionColor='bg-green-800 hover:bg-green-700 ring-green-700'
+          />
+        ))}
       </div>
     </div>
   );

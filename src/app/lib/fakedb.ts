@@ -185,24 +185,98 @@ export const orders = [
   },
 ];
 
-export const groups = Array.from({ length: 10 }, (v, i) => ({
-  id: i + 1,
-  title: `Group ${i + 1}`,
-  users: Math.floor(Math.random() * 99) + 1,
-  description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur, ipsa enim perspiciatis nesciunt, perferendis velit aperiam dicta debitis molestiae eveniet consequuntur doloribus veritatis magni impedit, alias temporibus hic expedita?',
-}));
+export const groups = [
+  {
+    id: 1,
+    title: `Group 1`,
+    users: 45,
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur, ipsa enim perspiciatis nesciunt, perferendis velit aperiam dicta debitis molestiae eveniet consequuntur doloribus veritatis magni impedit, alias temporibus hic expedita?',
+  },
+  {
+    id: 2,
+    title: `Group 2`,
+    users: 134,
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur, ipsa enim perspiciatis nesciunt, perferendis velit aperiam dicta debitis molestiae eveniet consequuntur doloribus veritatis magni impedit, alias temporibus hic expedita?',
+  },
+  {
+    id: 3,
+    title: `Group 3`,
+    users: 1564,
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur, ipsa enim perspiciatis nesciunt, perferendis velit aperiam dicta debitis molestiae eveniet consequuntur doloribus veritatis magni impedit, alias temporibus hic expedita?',
+  },
+  {
+    id: 4,
+    title: `Group 4`,
+    users: 3,
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur, ipsa enim perspiciatis nesciunt, perferendis velit aperiam dicta debitis molestiae eveniet consequuntur doloribus veritatis magni impedit, alias temporibus hic expedita?',
+  },
+  {
+    id: 5,
+    title: `Group 5`,
+    users: 87,
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur, ipsa enim perspiciatis nesciunt, perferendis velit aperiam dicta debitis molestiae eveniet consequuntur doloribus veritatis magni impedit, alias temporibus hic expedita?',
+  },
+  {
+    id: 6,
+    title: `Group 6`,
+    users: 93,
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur, ipsa enim perspiciatis nesciunt, perferendis velit aperiam dicta debitis molestiae eveniet consequuntur doloribus veritatis magni impedit, alias temporibus hic expedita?',
+  },
+  {
+    id: 7,
+    title: `Group 7`,
+    users: 32,
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur, ipsa enim perspiciatis nesciunt, perferendis velit aperiam dicta debitis molestiae eveniet consequuntur doloribus veritatis magni impedit, alias temporibus hic expedita?',
+  },
+  {
+    id: 8,
+    title: `Group 8`,
+    users: 445,
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur, ipsa enim perspiciatis nesciunt, perferendis velit aperiam dicta debitis molestiae eveniet consequuntur doloribus veritatis magni impedit, alias temporibus hic expedita?',
+  },
+  {
+    id: 9,
+    title: `Group 9`,
+    users: 85,
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur, ipsa enim perspiciatis nesciunt, perferendis velit aperiam dicta debitis molestiae eveniet consequuntur doloribus veritatis magni impedit, alias temporibus hic expedita?',
+  },
+  {
+    id: 10,
+    title: `Group 10`,
+    users: 235,
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur, ipsa enim perspiciatis nesciunt, perferendis velit aperiam dicta debitis molestiae eveniet consequuntur doloribus veritatis magni impedit, alias temporibus hic expedita?',
+  },
+];
 
-function createRandomArray() {
-  const randomArray = Array.from(
-    { length: Math.floor(Math.random() * 10) + 1 },
-    () => Math.floor(Math.random() * 10) + 1
-  );
-  return randomArray;
-}
-
-export const categories = Array.from({ length: 5 }, (v, i) => ({
-  id: i + 1,
-  title: `Category ${i + 1}`,
-  groups: createRandomArray(),
-}));
+export const categories = [
+  {
+    id: 1,
+    title: 'Category 1',
+    groups: [1, 3, 4],
+  },
+  {
+    id: 2,
+    title: 'Category 2',
+    groups: [2, 5, 6, 7],
+  },
+  {
+    id: 3,
+    title: 'Category 3',
+    groups: [8, 9],
+  },
+  {
+    id: 4,
+    title: 'Category 4',
+    groups: [10],
+  },
+];
